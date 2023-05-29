@@ -17,6 +17,8 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
+    if not (a + b > c) or not (a + c > b) or not (b + c > a):
+        raise TriangleError(AttributeError('The sum of any 2 sides should be larger than the remaining side.'))
     if a == b == c:
         return 'equilateral'
     elif (a == b) | (a == c) | (b == c):
@@ -27,3 +29,4 @@ def triangle(a, b, c):
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
     pass
+
